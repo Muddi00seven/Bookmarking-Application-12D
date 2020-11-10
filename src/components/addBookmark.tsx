@@ -21,7 +21,14 @@ const useStyle = makeStyles((theme) => ({
     backgroundColor: '#85807f',
     color: 'white',
     fontWeight: 'bolder',
-    fontSize: '18px'
+    fontSize: '18px',
+    fontFamily: '"Comic Sans MS", cursive, sans-serif',
+
+
+  },
+  field: {
+    color: 'red',
+    fontFamily: '"Comic Sans MS", cursive, sans-serif',
 
   },
   fieldBox: {
@@ -32,7 +39,8 @@ const useStyle = makeStyles((theme) => ({
     fontWeight: 550,
     justifyContent: 'center',
     textAlign: 'center',
-    color: '#a19d9c'
+    color: '#a19d9c',
+    fontFamily: '"Comic Sans MS", cursive, sans-serif',
   },
 }));
 
@@ -106,7 +114,7 @@ const AddBookmark: React.FC<props> = ({ setBookmarkList, bookmarksList }) => {
                   <div>
                     <Field
                       as={TextField}
-                      color="secondary"
+                    className={classes.field}
                       variant="outlined"
                       size="small"
                       fullWidth
@@ -122,7 +130,7 @@ const AddBookmark: React.FC<props> = ({ setBookmarkList, bookmarksList }) => {
                   <div>
                     <Field
                       as={TextField}
-                      color="secondary"
+                    className={classes.field}
                       variant="outlined"
                       size="small"
                       fullWidth
@@ -137,7 +145,7 @@ const AddBookmark: React.FC<props> = ({ setBookmarkList, bookmarksList }) => {
                   <div>
                     <Field
                       as={TextField}
-                      color="secondary"
+                    className={classes.field}
                       multiline
                       variant="outlined"
                       size="small"
