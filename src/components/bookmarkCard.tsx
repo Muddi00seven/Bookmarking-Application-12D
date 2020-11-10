@@ -13,7 +13,7 @@ const useStyle = makeStyles((theme) => ({
   cardWrapper: {
     background: "#f3f3f3",
     padding: "40px",
-    maxWidth: "600px",
+    maxWidth: "800px",
     margin: "10px auto 0 auto ",
     borderRadius: "8px",
     position: "relative",
@@ -29,6 +29,7 @@ const useStyle = makeStyles((theme) => ({
   date: {
     marginTop: "-3px",
     fontFamily: '"Comic Sans MS", cursive, sans-serif',
+    color: '#3b3a39'
 
   },
   description: {
@@ -37,7 +38,7 @@ const useStyle = makeStyles((theme) => ({
 
   },
   deleteButton: {
-    position: "absolute",
+    // position: "absolute",
     right: 0,
     top: 0,
     padding: "15px",
@@ -90,7 +91,7 @@ const BookmarkCard: React.FC<props> = ({ setBookmarkList, bookmarksList }) => {
 
   return (
     <div>
-      <div className={`Maincontainer`}>
+<div className="row">
         {!bookmarksList ? (
           <Box py={10}>
             <Cardloader />
@@ -99,13 +100,13 @@ const BookmarkCard: React.FC<props> = ({ setBookmarkList, bookmarksList }) => {
           <Box py={10}>
             {!!bookmarksList &&
               bookmarksList.map((bookmark: bookmarkType) => (
-                <div key={bookmark.id} className={classes.cardWrapper}>
+                <div key={bookmark.id} className="column">
+                      <div className="card">
                   <Box pb={2}>
                     <Typography className={`textPrimary ${classes.title}`}>
                       {bookmark?.title}
                     </Typography>
                     <Typography
-                      color="secondary"
                       variant="subtitle2"
                       className={classes.date}
                     >
@@ -124,7 +125,7 @@ const BookmarkCard: React.FC<props> = ({ setBookmarkList, bookmarksList }) => {
                         // color="secondary"
                         className={classes.urlBtn}
                       >
-                        Read More
+                        Get To The URL
                       </Button>
                     </a>
                   </Box>
@@ -135,6 +136,8 @@ const BookmarkCard: React.FC<props> = ({ setBookmarkList, bookmarksList }) => {
                       <DeleteIcon />
                     </IconButton>
                   </div>
+                  </div>
+
                 </div>
               ))}
           </Box>
