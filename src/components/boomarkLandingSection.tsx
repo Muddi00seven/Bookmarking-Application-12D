@@ -32,43 +32,11 @@ const BoomarkLandingSection: React.FC<props> = ({
   const classes = useStyle();
   return (
     <div className={classes.root}>
-      {/* <div className={`Maincontainer`}>
-        <Box py={10}>
-          <Grid container spacing={2}>
-            <Hidden xsDown>
-              <Grid
-                item
-                container
-                justify="flex-end"
-                alignContent="center"
-                sm={6}
-              >
-                <div>
-                  <Typography className={classes.title}>
-                    Bookmarking Application
-                  </Typography>
-                  <Typography className={classes.desc}>
-                    This App will let you save your bookmarks here for free
-                  </Typography>
-                </div>
-              </Grid>
-            </Hidden>
-            <Grid item sm={6} xs={12} container justify="center">
               <AddBookmark
                 setBookmarkList={setBookmarkList}
                 bookmarksList={bookmarksList}
               />
-            </Grid>
-          </Grid>
-        </Box>
-      </div> */}
-        {/* <Grid item sm={6} xs={12} container justify="center"> */}
-              <AddBookmark
-                setBookmarkList={setBookmarkList}
-                bookmarksList={bookmarksList}
-              />
-            {/* </Grid> */}
-    </div>
+      </div>
   );
 };
 
