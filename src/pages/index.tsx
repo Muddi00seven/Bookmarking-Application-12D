@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import BookmarkCard from "../components/bookmarkCard";
 import BoomarkLandingSection from "../components/boomarkLandingSection";
 //css
-import "../assets/css/main.css";
+import "../css/main.css";
 //types
 import { bookmarkType } from "../types/bookmarkType";
 

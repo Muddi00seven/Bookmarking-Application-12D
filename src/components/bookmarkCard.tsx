@@ -3,7 +3,7 @@ import { useMutation } from "@apollo/client";
 import { DELETE_BOOKMARK } from "../queries/deleteBookmark";
 import { useBookmarkListQuery } from "../types/generated";
 import {makeStyles,Box,Typography,Button, IconButton,} from "@material-ui/core";
-import DeleteIcon from "@material-ui/icons/Delete";
+import CancelIcon from '@material-ui/icons/Cancel';
 import Cardloader from "../utlils/cardloader";
 import dayjs from "dayjs";
 import { bookmarkList } from "../queries/bookmarkList";
@@ -38,11 +38,10 @@ const useStyle = makeStyles((theme) => ({
 
   },
   deleteButton: {
-    // position: "absolute",
     right: 0,
     top: 0,
     padding: "15px",
-    color: '#666362'
+    color: 'red'
 
   },
   urlBtn: {
@@ -132,8 +131,9 @@ const BookmarkCard: React.FC<props> = ({ setBookmarkList, bookmarksList }) => {
                   <div className={classes.deleteButton}>
                     <IconButton
                       onClick={() => handleDelete(bookmark.id)}
+                      className={classes.deleteButton}
                     >
-                      <DeleteIcon />
+                      <CancelIcon />
                     </IconButton>
                   </div>
                   </div>
