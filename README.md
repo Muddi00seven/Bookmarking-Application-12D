@@ -7,6 +7,9 @@
   Minimal starter for installing recipes
 </h1>
 
+## url
+https://5faa82ee477329a3875778e2--amazing-wiles-2acabb.netlify.app
+
 Note that this starter does not include any pages by default.
 
 This starter is meant as a minimal reproduction of a Gatsby project in order to facilitate recipe installation.
