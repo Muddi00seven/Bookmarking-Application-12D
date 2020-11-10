@@ -2,14 +2,7 @@ import React from "react";
 import { useMutation } from "@apollo/client";
 import { ADD_BOOKMARK } from "../queries/addBookmark";
 import { bookmarkList } from "../queries/bookmarkList";
-import {
-  makeStyles,
-  Box,
-  Typography,
-  Button,
-  TextField,
-  TextareaAutosize,
-} from "@material-ui/core";
+import {makeStyles,Box,Typography,Button,TextField,TextareaAutosize,} from "@material-ui/core";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import ErrorMsg from "../utlils/errorMsg";
@@ -19,13 +12,27 @@ const useStyle = makeStyles((theme) => ({
   root: {
     background: "white",
     width: "100%",
-    maxWidth: "350px",
+    maxWidth: "700px",
     borderRadius: "5px",
     margin: "0 auto",
   },
+  submitBtn: {
+    width: '100%',
+    backgroundColor: '#85807f',
+    color: 'white',
+    fontWeight: 'bolder',
+    fontSize: '18px'
+
+  },
+  fieldBox: {
+    marginBottom: '2%'
+  },
   formTitle: {
-    fontSize: "20px",
+    fontSize: "24px",
     fontWeight: 550,
+    justifyContent: 'center',
+    textAlign: 'center',
+    color: '#a19d9c'
   },
 }));
 
@@ -90,13 +97,12 @@ const AddBookmark: React.FC<props> = ({ setBookmarkList, bookmarksList }) => {
               <Form>
                 <Box pb={2}>
                   <Typography
-                    color="secondary"
-                    className={` ${classes.formTitle}`}
+                    className={classes.formTitle}
                   >
                     Add Bookmark
                   </Typography>
                 </Box>
-                <Box style={{ paddingBottom: "12px" }}>
+                <Box className={classes.fieldBox}>
                   <div>
                     <Field
                       as={TextField}
@@ -112,7 +118,7 @@ const AddBookmark: React.FC<props> = ({ setBookmarkList, bookmarksList }) => {
                     <ErrorMessage name="title" component={ErrorMsg} />
                   </div>
                 </Box>
-                <Box style={{ paddingBottom: "12px" }}>
+                <Box className={classes.fieldBox}>
                   <div>
                     <Field
                       as={TextField}
@@ -127,7 +133,7 @@ const AddBookmark: React.FC<props> = ({ setBookmarkList, bookmarksList }) => {
                     <ErrorMessage name="url" component={ErrorMsg} />
                   </div>
                 </Box>
-                <Box style={{ paddingBottom: "12px" }}>
+                <Box className={classes.fieldBox}>
                   <div>
                     <Field
                       as={TextField}
@@ -143,7 +149,7 @@ const AddBookmark: React.FC<props> = ({ setBookmarkList, bookmarksList }) => {
                     <ErrorMessage name="description" component={ErrorMsg} />
                   </div>
                 </Box>
-                <Button variant="contained" color="secondary" type="submit">
+                <Button variant="contained" className={classes.submitBtn} type="submit">
                   Submit
                 </Button>
               </Form>
