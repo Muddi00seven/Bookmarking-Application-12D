@@ -23,22 +23,15 @@ const typeDefs = gql`
 `;
 
 var adminClient = new faunadb.Client({
-  secret: process.env.ADMIN_SECRET,
+  // secret: process.env.ADMIN_SECRET,
+  secret: "fnAD52S1RaACB4gvp1m5GEnre2BevPY1tDf7tN94",
+
 });
-//genrating date of now
 const now = dayjs().format();
 const resolvers = {
   Query: {
     bookmarks: async (root, args, context) => {
       try {
-
-        // const result = await adminClient.query(
-        //   q.Map(
-        //     q.Paginate(q.Match(q.Index("all_bookmarks"))),
-        //     q.Lambda((x) => q.Get(x))
-        //   )
-        // );
-
         let result = await adminClient.query(
           q.Map(
             q.Paginate(q.Documents(q.Collection("bookmarks"))),
